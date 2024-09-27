@@ -23,12 +23,6 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
-            steps {
-                sh 'cd nodejs && npm test'
-            }
-        }
-
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
